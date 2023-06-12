@@ -18,6 +18,9 @@ public:
 	void PrintPEHeader();
 	void PrintPEOptionalHeader();
 	void PrintSectionHeaders(); 
+	void GetExportTable();
+	void GetImportTables();
+	void GetReLocation();
 
 private:
 	char* fileBuff;		
@@ -32,5 +35,11 @@ private:
 	init pe file info
 	*/
 	BOOL InitPEInfo();
+
+	/*
+	RVA转FOA
+	*/
+	DWORD RvaToFoa1(DWORD rva);
+	DWORD RvaToFoa(DWORD rva);
 
 };
